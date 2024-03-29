@@ -99,7 +99,7 @@ export default class Headers extends URLSearchParams {
 				result.map(([name, value]) => {
 					validateHeaderName(name);
 					validateHeaderValue(name, String(value));
-					return [String(name).toLowerCase(), String(value)];
+					return [String(name), String(value)];
 				}) :
 				undefined;
 
@@ -117,7 +117,7 @@ export default class Headers extends URLSearchParams {
 							validateHeaderValue(name, String(value));
 							return URLSearchParams.prototype[p].call(
 								target,
-								String(name).toLowerCase(),
+								String(name),
 								String(value)
 							);
 						};
@@ -129,7 +129,7 @@ export default class Headers extends URLSearchParams {
 							validateHeaderName(name);
 							return URLSearchParams.prototype[p].call(
 								target,
-								String(name).toLowerCase()
+								String(name)
 							);
 						};
 
@@ -163,7 +163,7 @@ export default class Headers extends URLSearchParams {
 
 		let value = values.join(', ');
 		if (/^content-encoding$/i.test(name)) {
-			value = value.toLowerCase();
+			value = value;
 		}
 
 		return value;
