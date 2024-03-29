@@ -1,5 +1,5 @@
 {
-  "name": "node-fetch",
+  "name": "node-fetch-header-mod",
   "version": "3.1.1",
   "description": "A light-weight module that brings Fetch API to node.js",
   "main": "./src/index.js",
